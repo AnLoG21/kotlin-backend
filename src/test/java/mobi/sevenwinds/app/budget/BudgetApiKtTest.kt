@@ -38,7 +38,7 @@ class BudgetApiKtTest : ServerTest() {
 
                 Assert.assertEquals(5, response.total)
                 Assert.assertEquals(3, response.items.size)
-                Assert.assertEquals(105, response.totalByType[BudgetType.Приход.name])
+                Assert.assertEquals(105, response.totalByType[BudgetType.Приход.amount])
             }
     }
 

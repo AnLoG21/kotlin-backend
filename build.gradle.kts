@@ -7,8 +7,8 @@ val logback_version: String by project
 
 plugins {
     application
-    kotlin("jvm") version "1.4.32"
-    id("com.github.johnrengelman.shadow") version "5.0.0"
+    kotlin("jvm") version "1.5.31"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "mobi.sevenwinds"
@@ -25,40 +25,31 @@ repositories {
 }
 
 dependencies {
-
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-
-    implementation("io.ktor:ktor-server-core:$ktor_version")
-    implementation("io.ktor:ktor-jackson:$ktor_version")
-    implementation("io.ktor:ktor-server-netty:$ktor_version")
-    implementation("io.ktor:ktor-auth:$ktor_version")
-    implementation("io.ktor:ktor-auth-jwt:$ktor_version")
-    implementation("io.ktor:ktor-locations:$ktor_version")
-    implementation("io.ktor:ktor-metrics:$ktor_version")
-    implementation("io.ktor:ktor-server-sessions:$ktor_version")
-
-    implementation("ch.qos.logback:logback-classic:$logback_version")
-
+    implementation("io.ktor:ktor-server-core:1.6.1") // Используйте конкретную версию, если ktor_version не определен
+    implementation("io.ktor:ktor-jackson:1.6.1")
+    implementation("io.ktor:ktor-server-netty:1.6.1")
+    implementation("io.ktor:ktor-auth:1.6.1")
+    implementation("io.ktor:ktor-auth-jwt:1.6.1")
+    implementation("io.ktor:ktor-locations:1.6.1")
+    implementation("io.ktor:ktor-metrics:1.6.1")
+    implementation("io.ktor:ktor-server-sessions:1.6.1")
+    implementation("ch.qos.logback:logback-classic:1.2.3") // Используйте конкретную версию, если logback_version не определен
     implementation("com.github.papsign:Ktor-OpenAPI-Generator:0.2-beta.20")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.8") // needed for multipart parsing
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.8") // needed for Optional<> parsing
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.8")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.8")
     implementation("org.webjars:swagger-ui:3.25.0")
-    implementation("org.reflections:reflections:0.9.11") // only used while initializing
-
+    implementation("org.reflections:reflections:0.9.11")
     implementation("at.favre.lib:bcrypt:0.9.0")
-
     implementation("org.postgresql:postgresql:42.2.12")
-
     implementation("org.jetbrains.exposed:exposed:0.17.13")
     implementation("com.zaxxer:HikariCP:2.7.8")
     implementation("org.flywaydb:flyway-core:5.2.4")
-
     implementation("com.squareup.retrofit2:retrofit:2.3.0")
     implementation("com.squareup.retrofit2:converter-jackson:2.3.0")
     implementation("com.squareup.retrofit2:adapter-rxjava2:2.3.0")
     implementation("com.squareup.okhttp3:logging-interceptor:3.10.0")
-
-    testImplementation("io.ktor:ktor-server-tests:$ktor_version")
+    testImplementation("io.ktor:ktor-server-tests:1.6.1")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
     testImplementation("org.assertj:assertj-core:3.19.0")
